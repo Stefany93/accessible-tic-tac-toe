@@ -1,1 +1,1 @@
-# Accessible Tic Tac Toe React Spp 
+# Accessible Tic Tac Toe React App 
