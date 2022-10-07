@@ -5,7 +5,7 @@ import './index.css';
 function Square(props) {
   console.log(props);
   return (
-    <button className="square" onClick={props.onClick} aria-label={props.count}>
+    <button className="square" onClick={props.onClick} aria-label={props.ariaLabel}>
       {props.value}
     </button>
   );
@@ -37,7 +37,7 @@ class Board extends React.Component {
       <Square
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
-        count={i}
+        ariaLabel={'Box Number ' + (i+1)}
       />
     );
   }
