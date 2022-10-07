@@ -37,7 +37,7 @@ class Board extends React.Component {
       <Square
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
-        ariaLabel={'Box Number ' + (i+1)}
+        ariaLabel={'Box Number ' + (i+1) + (this.state.squares[i] != null ? ' Marked.' : '')}
       />
     );
   }
