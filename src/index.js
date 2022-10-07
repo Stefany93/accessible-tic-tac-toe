@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 function Square(props) {
-  console.log(props.value);
+  console.log(props);
   return (
-    <button className="square" onClick={props.onClick}>
+    <button className="square" onClick={props.onClick} aria-label={props.count}>
       {props.value}
     </button>
   );
@@ -37,6 +37,7 @@ class Board extends React.Component {
       <Square
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
+        count={i}
       />
     );
   }
