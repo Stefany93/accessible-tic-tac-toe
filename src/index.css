@@ -31,6 +31,10 @@ body {
     text-align: center;
     width: 45px;
   }
+
+.square:disabled{
+  color: inherit;
+}
   
   .square:focus {
     outline: 2px solid rebeccapurple;
