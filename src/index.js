@@ -2,14 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
+// Generate the square boxes 
 function Square(props) {
   return (
-    <button className="square" aria-disabled={props.isDisabled} onClick={props.onClick} aria-label={props.ariaLabel}>
+    <button className="square" 
+            aria-disabled={props.isDisabled} 
+            onClick={props.onClick} 
+            aria-label={props.ariaLabel}>
       {props.value}
     </button>
   );
 }
-
+// Output the board and control state
 class Board extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +22,10 @@ class Board extends React.Component {
       xIsNext: true,
     };
   }
-
+/*
+*   On each click, it adds the X or O in the state
+*   and calculates whose turn it is.
+*/
   handleClick(i) {
     const squares = this.state.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
@@ -32,7 +39,7 @@ class Board extends React.Component {
   }
 
   renderSquare(i) {
-    const mark = this.state.squares[i];
+    const mark = this.state.squares[i]; // Current X or O
     return (
       <Square
         value={mark}
@@ -94,7 +101,10 @@ class Game extends React.Component {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Game />);
-
+/*
+*  To do: make the function simpler.
+*  
+*/
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
