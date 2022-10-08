@@ -5,7 +5,7 @@ import './index.css';
 function Square(props) {
   console.log(props);
   return (
-    <button className="square" onClick={props.onClick} aria-label={props.ariaLabel}>
+    <button className="square" disabled={props.value} onClick={props.onClick} aria-label={props.ariaLabel}>
       {props.value}
     </button>
   );
