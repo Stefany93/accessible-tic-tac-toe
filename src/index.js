@@ -37,7 +37,7 @@ class Board extends React.Component {
       <Square
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
-        ariaLabel={'Box Number ' + (i+1) + (this.state.squares[i] != null ? ' Marked.' : '')}
+        ariaLabel={'Box Number ' + (i+1) + (this.state.squares[i] != null ? ' Marked' : '')}
       />
     );
   }
@@ -53,7 +53,7 @@ class Board extends React.Component {
 
     return (
       <div>
-        <div className="status">{status}</div>
+        <div className="status" aria-live="polite">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
