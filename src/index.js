@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 function Square(props) {
-  console.log(props);
   return (
     <button className="square" aria-disabled={props.isDisabled} onClick={props.onClick} aria-label={props.ariaLabel}>
       {props.value}
