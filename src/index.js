@@ -5,7 +5,7 @@ import './index.css';
 function Square(props) {
   console.log(props);
   return (
-    <button className="square" disabled={props.value} onClick={props.onClick} aria-label={props.ariaLabel}>
+    <button className="square" aria-disabled={props.isDisabled} onClick={props.onClick} aria-label={props.ariaLabel}>
       {props.value}
     </button>
   );
@@ -33,11 +33,13 @@ class Board extends React.Component {
   }
 
   renderSquare(i) {
+    console.log(this.state.squares[i]);
     return (
       <Square
         value={this.state.squares[i]}
         onClick={() => this.handleClick(i)}
         ariaLabel={'Box Number ' + (i+1) + (this.state.squares[i] != null ? ' Marked with ' + this.state.squares[i] : '')}
+        isDisabled={(this.state.squares[i] != null ? 'true' : 'false')}
       />
     );
   }
