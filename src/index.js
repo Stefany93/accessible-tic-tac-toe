@@ -33,13 +33,13 @@ class Board extends React.Component {
   }
 
   renderSquare(i) {
-    console.log(this.state.squares[i]);
+    const mark = this.state.squares[i];
     return (
       <Square
-        value={this.state.squares[i]}
+        value={mark}
         onClick={() => this.handleClick(i)}
-        ariaLabel={'Box Number ' + (i+1) + (this.state.squares[i] != null ? ' Marked with ' + this.state.squares[i] : '')}
-        isDisabled={(this.state.squares[i] != null ? 'true' : 'false')}
+        ariaLabel={'Box Number ' + (i+1) + (mark != null ? ' Marked with ' + mark : '')}
+        isDisabled={(mark != null ? 'true' : 'false')}
       />
     );
   }
