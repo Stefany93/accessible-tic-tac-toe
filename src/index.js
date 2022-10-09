@@ -18,7 +18,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squares: Array(9).fill(null),
+      squares: Array(9).fill(null), // Each index is a number of the squares
       xIsNext: true,
     };
   }
@@ -101,8 +101,10 @@ class Game extends React.Component {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Game />);
+
+
 /*
-*  To do: make the function simpler.
+*  lines[] is a multidimentional array that contains all the game winning combinations.
 *  
 */
 function calculateWinner(squares) {
@@ -117,10 +119,10 @@ function calculateWinner(squares) {
     [2, 4, 6],
   ];
   for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
+    const [a, b, c] = lines[i]; // Indexes a,b,c are the boxes of the board
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      return squares[a]; // Returns an array with the winner either being X or O
     }
   }
-  return null;
+  return null; // No winner, return null, game continues
 }
